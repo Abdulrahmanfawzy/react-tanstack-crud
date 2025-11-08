@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
-const deletePost = async (id) => {
+const deletePost = async (id: string) => {
   const { data } = await axios.delete(`http://localhost:3000/posts/${id}`);
   return data;
 };
