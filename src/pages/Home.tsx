@@ -13,6 +13,7 @@ const Home = () => {
   const [paginate, setPaginate] = useState<number>(1);
   const [postStatus, setPostStatus] = useState("");
   const [searchVal, setSearchVal] = useState("");
+  const [postModal , setPostModal] = useState(false)
   const {
     data: allPosts,
     isLoading: postsLoading,
@@ -69,10 +70,10 @@ const Home = () => {
           <h5>Filter By Status</h5>
           <PostFilter postStatus={postStatus} setPostStatus={setPostStatus} />
           <PostSearch searchVal={searchVal} setSearchVal={setSearchVal} />
-          <AddPost />
+          <AddPost setPostModal={setPostModal} />
         </Col>
       </Row>
-      <PostModal />
+      <PostModal postModal={postModal} setPostModal={setPostModal} />
     </>
   );
 };
